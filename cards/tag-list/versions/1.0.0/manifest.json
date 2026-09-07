@@ -1,0 +1,1 @@
+{"id":"tag-list","name":"并列标签","version":"1.0.0","description":"多个并列概念围绕人物逐条累积。","defaultDuration":5,"source":"Component.jsx","poster":"poster.svg","preview":"preview.mp4","properties":[{"key":"items","label":"标签列表","type":"text","defaultValue":"选题|文案|拍摄|剪辑"},{"key":"accentColor","label":"强调色","type":"color","defaultValue":"#63F3E8"}],"mediaSlots":[]}
