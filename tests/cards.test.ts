@@ -9,8 +9,6 @@ const manifests = [
     description: "强调明确数字",
     defaultDuration: 2.5,
     source: "Component.jsx",
-    poster: "poster.svg",
-    preview: "preview.webm",
     properties: [{ key: "value", label: "数字", type: "number", defaultValue: 20 }],
     mediaSlots: [],
   },

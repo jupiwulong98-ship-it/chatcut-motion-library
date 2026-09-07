@@ -47,7 +47,7 @@
 
 - [ ] **Step 3: 实现最小类型、加载器和校验脚本**
 
-  `CardManifest` 只包含 `id/name/version/description/defaultDuration/properties/mediaSlots/poster/preview/source`。不添加账号、标签推荐或 SRT 选卡字段。
+  `CardManifest` 只包含 `id/name/version/description/defaultDuration/properties/mediaSlots/source`。网页直接运行同一份 `Component.jsx` 生成静态展示帧和点击播放预览，不维护独立的预览视频。不添加账号、标签推荐或 SRT 选卡字段。
 
 - [ ] **Step 4: 运行 `npm test` 和 `npm run validate:cards`，确认通过**
 
@@ -121,8 +121,7 @@
 ### Task 4: 生成预览并验证 AI 复用闭环
 
 **Files:**
-- Create: `cards/<card-id>/versions/1.0.0/poster.png`
-- Create: `cards/<card-id>/versions/1.0.0/preview.mp4`
+- Use: `cards/<card-id>/versions/1.0.0/Component.jsx` 生成网页展示帧和点击播放预览
 - Create: `docs/ai-usage.md`
 - Create: `scripts/find-card.mjs`
 
@@ -154,4 +153,3 @@
 - 每张卡的网页预览来自同一 JSX 源码的 ChatCut 实际渲染。
 - AI 可按 ID 确定读卡、安装、复用和放置。
 - 旧版本未经授权不删除。
-

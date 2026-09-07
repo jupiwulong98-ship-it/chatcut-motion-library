@@ -22,8 +22,6 @@ export interface CardManifest {
   description: string;
   defaultDuration: number;
   source: string;
-  poster: string;
-  preview: string;
   properties: CardProperty[];
   mediaSlots: MediaSlot[];
 }

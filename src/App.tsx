@@ -1,13 +1,15 @@
-import { useState } from "react";
-import { cards, mediaUrl } from "./cards/catalog";
+import { useCallback, useState } from "react";
+import { cards } from "./cards/catalog";
 import type { CardManifest } from "./cards/types";
+import { MotionPreview } from "./components/MotionPreview";
 import "./styles.css";
 
 function Preview({ card, large = false }: { card: CardManifest; large?: boolean }) {
   const [playing, setPlaying] = useState(false);
-  return <div className={`preview ${large ? "preview-large" : ""}`}>
-    <video src={mediaUrl(card, card.preview)} poster={mediaUrl(card, card.poster)} autoPlay={false} controls={playing} onEnded={() => setPlaying(false)} />
-    {!playing && <button className="play" aria-label="播放预览" onClick={(event) => { event.stopPropagation(); setPlaying(true); const video = event.currentTarget.previousElementSibling as HTMLVideoElement; void video.play(); }}>▶</button>}
+  const stopPlaying = useCallback(() => setPlaying(false), []);
+  return <div className={`preview ${large ? "preview-large" : ""}`} data-testid="card-preview" data-playing={playing}>
+    <MotionPreview card={card} playing={playing} onEnd={stopPlaying} />
+    {!playing && <button className="play" aria-label="播放预览" onClick={(event) => { event.stopPropagation(); setPlaying(true); }}>▶</button>}
   </div>;
 }
 

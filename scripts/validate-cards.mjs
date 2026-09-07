@@ -44,7 +44,7 @@ for (const id of actual) {
   }
   const manifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"));
   if (manifest.id !== id) errors.push(`${id}: manifest id mismatch`);
-  for (const key of ["source", "poster", "preview"]) {
+  for (const key of ["source"]) {
     if (!manifest[key] || !fs.existsSync(path.join(versionDir, manifest[key]))) {
       errors.push(`${id}: ${key} file is missing`);
     }
