@@ -1,0 +1,1 @@
+{"id":"number-impact","name":"数字冲击","version":"1.0.0","description":"巨大数字快速计数并定格。","defaultDuration":2.5,"source":"Component.jsx","properties":[{"key":"value","label":"数值","type":"number","defaultValue":20},{"key":"suffix","label":"单位","type":"text","defaultValue":"个"},{"key":"accentColor","label":"强调色","type":"color","defaultValue":"#FFE94A"}],"mediaSlots":[]}
