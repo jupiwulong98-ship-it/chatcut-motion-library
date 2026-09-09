@@ -1,0 +1,59 @@
+{
+  "id": "side-tag-cluster",
+  "name": "左右标签簇",
+  "version": "1.0.0",
+  "description": "五个紫粉纯色标签围绕人物，左2右3。",
+  "defaultDuration": 3.4,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "label1",
+      "label": "左上",
+      "type": "text",
+      "defaultValue": "发朋友圈"
+    },
+    {
+      "key": "label2",
+      "label": "左下",
+      "type": "text",
+      "defaultValue": "写小红书"
+    },
+    {
+      "key": "label3",
+      "label": "右上",
+      "type": "text",
+      "defaultValue": "写总结"
+    },
+    {
+      "key": "label4",
+      "label": "标签4",
+      "type": "text",
+      "defaultValue": "表自信"
+    },
+    {
+      "key": "label5",
+      "label": "右下",
+      "type": "text",
+      "defaultValue": "演讲稿"
+    },
+    {
+      "key": "fillColor",
+      "label": "标签颜色",
+      "type": "color",
+      "defaultValue": "#DC77EF"
+    },
+    {
+      "key": "textColor",
+      "label": "文字色",
+      "type": "color",
+      "defaultValue": "#050505"
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    }
+  ],
+  "mediaSlots": []
+}

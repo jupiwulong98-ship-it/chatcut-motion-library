@@ -1,0 +1,54 @@
+{
+  "id": "chapter-neon-title",
+  "name": "霓虹章节标题",
+  "version": "1.0.0",
+  "description": "真实山水/雾景背景上叠加巨大青色霓虹章节标题。",
+  "defaultDuration": 2.6,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "title",
+      "label": "章节标题",
+      "type": "text",
+      "defaultValue": "AI写作"
+    },
+    {
+      "key": "neonColor",
+      "label": "霓虹颜色",
+      "type": "color",
+      "defaultValue": "#73FFF8"
+    },
+    {
+      "key": "fontSize",
+      "label": "字号",
+      "type": "number",
+      "defaultValue": 430
+    },
+    {
+      "key": "strokeWidth",
+      "label": "霓虹描边",
+      "type": "number",
+      "defaultValue": 6
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    }
+  ],
+  "mediaSlots": [
+    {
+      "key": "backgroundImage",
+      "label": "背景图",
+      "type": "image",
+      "required": false
+    },
+    {
+      "key": "backgroundVideo",
+      "label": "背景视频",
+      "type": "video",
+      "required": false
+    }
+  ]
+}

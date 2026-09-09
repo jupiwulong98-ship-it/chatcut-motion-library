@@ -1,0 +1,72 @@
+{
+  "id": "screen-pip-scene",
+  "name": "工具录屏展示场景",
+  "version": "1.0.0",
+  "description": "透视网格 + 大录屏 + 左上 Logo + 左下圆形真人 + 右侧三条绿色卖点。",
+  "defaultDuration": 5,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "label1",
+      "label": "卖点1",
+      "type": "text",
+      "defaultValue": "在线用"
+    },
+    {
+      "key": "label2",
+      "label": "卖点2",
+      "type": "text",
+      "defaultValue": "支持长文本导出"
+    },
+    {
+      "key": "label3",
+      "label": "卖点3",
+      "type": "text",
+      "defaultValue": "音色自然"
+    },
+    {
+      "key": "accentColor",
+      "label": "标签色",
+      "type": "color",
+      "defaultValue": "#A5FF35"
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    },
+    {
+      "key": "textColor",
+      "label": "文字颜色",
+      "type": "color",
+      "defaultValue": "#111111"
+    },
+    {
+      "key": "gridColor",
+      "label": "网格颜色",
+      "type": "color",
+      "defaultValue": "#686868"
+    }
+  ],
+  "mediaSlots": [
+    {
+      "key": "screenVideo",
+      "label": "工具录屏",
+      "type": "video",
+      "required": true
+    },
+    {
+      "key": "logoImage",
+      "label": "工具 Logo",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "presenterVideo",
+      "label": "人物口播",
+      "type": "video",
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "screen-focus-callout",
+  "name": "界面重点框选场景",
+  "version": "2.0.0",
+  "description": "网格场景中展示录屏、Logo、圆形真人，并用红色粗框标出界面区域。",
+  "defaultDuration": 5,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "boxX",
+      "label": "框 X",
+      "type": "number",
+      "defaultValue": 575
+    },
+    {
+      "key": "boxY",
+      "label": "框 Y",
+      "type": "number",
+      "defaultValue": 485
+    },
+    {
+      "key": "boxW",
+      "label": "框宽",
+      "type": "number",
+      "defaultValue": 930
+    },
+    {
+      "key": "boxH",
+      "label": "框高",
+      "type": "number",
+      "defaultValue": 475
+    },
+    {
+      "key": "accentColor",
+      "label": "框颜色",
+      "type": "color",
+      "defaultValue": "#FF3A32"
+    },
+    {
+      "key": "gridColor",
+      "label": "网格颜色",
+      "type": "color",
+      "defaultValue": "#686868"
+    }
+  ],
+  "mediaSlots": [
+    {
+      "key": "screenVideo",
+      "label": "界面录屏",
+      "type": "video",
+      "required": true
+    },
+    {
+      "key": "logoImage",
+      "label": "Logo",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "presenterVideo",
+      "label": "真人视频",
+      "type": "video",
+      "required": true
+    }
+  ]
+}

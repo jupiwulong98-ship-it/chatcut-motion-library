@@ -1,0 +1,24 @@
+{
+  "id": "tool-demo-scene",
+  "name": "工具演示场景",
+  "version": "1.0.0",
+  "description": "透视网格中的主录屏，叠加工具 Logo、圆形真人口播和逐条累加的荧光绿卖点。",
+  "defaultDuration": 4,
+  "source": "Component.jsx",
+  "properties": [
+    {"key":"label1","label":"卖点一","type":"text","defaultValue":"在线用"},
+    {"key":"label2","label":"卖点二","type":"text","defaultValue":"支持长文本导出"},
+    {"key":"label3","label":"卖点三","type":"text","defaultValue":"音色自然"},
+    {"key":"accentColor","label":"标签颜色","type":"color","defaultValue":"#A3FF32"},
+    {"key":"textColor","label":"文字颜色","type":"color","defaultValue":"#111111"},
+    {"key":"gridColor","label":"网格颜色","type":"color","defaultValue":"#747875"},
+    {"key":"screenScale","label":"录屏大小","type":"number","defaultValue":1},
+    {"key":"presenterScale","label":"人物大小","type":"number","defaultValue":1},
+    {"key":"logoScale","label":"Logo 大小","type":"number","defaultValue":1}
+  ],
+  "mediaSlots": [
+    {"key":"screenVideo","label":"主工具录屏","type":"video","required":true},
+    {"key":"logoImage","label":"工具 Logo","type":"image","required":true},
+    {"key":"presenterVideo","label":"人物口播","type":"video","required":true}
+  ]
+}

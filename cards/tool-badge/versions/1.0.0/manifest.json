@@ -1,0 +1,23 @@
+{
+  "id": "tool-badge",
+  "name": "双工具 Logo",
+  "version": "1.0.0",
+  "description": "真人左右两侧弹出真实工具 Logo。",
+  "defaultDuration": 3.0,
+  "source": "Component.jsx",
+  "properties": [],
+  "mediaSlots": [
+    {
+      "key": "logoLeft",
+      "label": "左侧 Logo",
+      "type": "image",
+      "required": false
+    },
+    {
+      "key": "logoRight",
+      "label": "右侧 Logo",
+      "type": "image",
+      "required": false
+    }
+  ]
+}

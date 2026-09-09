@@ -1,0 +1,36 @@
+{
+  "id": "perspective-result-split",
+  "name": "透视结果分屏",
+  "version": "1.0.0",
+  "description": "左真人大画面 + 右侧倾斜透视结果屏 + 黑色网格背景。",
+  "defaultDuration": 5.0,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "gridColor",
+      "label": "网格颜色",
+      "type": "color",
+      "defaultValue": "#686868"
+    }
+  ],
+  "mediaSlots": [
+    {
+      "key": "presenterVideo",
+      "label": "真人视频",
+      "type": "video",
+      "required": true
+    },
+    {
+      "key": "resultImage",
+      "label": "结果图",
+      "type": "image",
+      "required": false
+    },
+    {
+      "key": "resultVideo",
+      "label": "结果视频",
+      "type": "video",
+      "required": false
+    }
+  ]
+}

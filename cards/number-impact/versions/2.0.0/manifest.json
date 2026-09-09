@@ -1,0 +1,58 @@
+{
+  "id": "number-impact",
+  "name": "数字冲击",
+  "version": "2.0.0",
+  "description": "大号浅黄色数字在人物侧边快速弹出。",
+  "defaultDuration": 2.5,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "value",
+      "label": "数值",
+      "type": "number",
+      "defaultValue": 100
+    },
+    {
+      "key": "prefix",
+      "label": "前缀",
+      "type": "text",
+      "defaultValue": ""
+    },
+    {
+      "key": "suffix",
+      "label": "后缀",
+      "type": "text",
+      "defaultValue": "+"
+    },
+    {
+      "key": "color",
+      "label": "文字颜色",
+      "type": "color",
+      "defaultValue": "#FFF58A"
+    },
+    {
+      "key": "fontSize",
+      "label": "字号",
+      "type": "number",
+      "defaultValue": 332
+    },
+    {
+      "key": "position",
+      "label": "位置",
+      "type": "select",
+      "defaultValue": "right",
+      "options": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    }
+  ],
+  "mediaSlots": []
+}

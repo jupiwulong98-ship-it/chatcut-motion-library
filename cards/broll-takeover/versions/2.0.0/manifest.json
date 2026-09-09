@@ -1,0 +1,29 @@
+{
+  "id": "broll-takeover",
+  "name": "B-roll 接管",
+  "version": "2.0.0",
+  "description": "真实 B-roll 全屏接管，左下保留圆形真人。",
+  "defaultDuration": 5,
+  "source": "Component.jsx",
+  "properties": [],
+  "mediaSlots": [
+    {
+      "key": "brollImage",
+      "label": "B-roll 图片",
+      "type": "image",
+      "required": false
+    },
+    {
+      "key": "brollVideo",
+      "label": "B-roll 视频",
+      "type": "video",
+      "required": false
+    },
+    {
+      "key": "presenterVideo",
+      "label": "真人视频",
+      "type": "video",
+      "required": true
+    }
+  ]
+}

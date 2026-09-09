@@ -1,0 +1,66 @@
+{
+  "id": "logo-wall",
+  "name": "工具 Logo 墙",
+  "version": "2.0.0",
+  "description": "多枚真实工具 Logo 以半透明方式铺在人物背后。",
+  "defaultDuration": 3,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "opacity",
+      "label": "整体透明度",
+      "type": "number",
+      "defaultValue": 0.72
+    }
+  ],
+  "mediaSlots": [
+    {
+      "key": "logo1",
+      "label": "Logo 1",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logo2",
+      "label": "Logo 2",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logo3",
+      "label": "Logo 3",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logo4",
+      "label": "Logo 4",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logo5",
+      "label": "Logo 5",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logo6",
+      "label": "Logo 6",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logo7",
+      "label": "Logo 7",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logo8",
+      "label": "Logo 8",
+      "type": "image",
+      "required": true
+    }
+  ]
+}

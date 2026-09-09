@@ -20,5 +20,5 @@ function Detail({ card, onBack }: { card: CardManifest; onBack: () => void }) {
 export function App() {
   const [selected, setSelected] = useState<CardManifest | null>(null);
   if (selected) return <Detail card={selected} onBack={() => setSelected(null)} />;
-  return <main className="shell"><header><p className="eyebrow">CHATCUT MOTION LIBRARY</p><h1>ChatCut 原生动效卡片库</h1><p className="description">8 张已发布的标准动效卡。网页只用来看效果，时间线操作由 AI 在 ChatCut 中完成。</p></header><section className="grid">{cards.map(card => <article className="card" key={card.id} onClick={() => setSelected(card)}><Preview card={card}/><div className="card-copy"><div><h2>{card.name}</h2><p>{card.description}</p></div><span>{card.defaultDuration}s · v{card.version}</span></div></article>)}</section></main>;
+  return <main className="shell"><header><p className="eyebrow">CHATCUT MOTION LIBRARY</p><h1>ChatCut 原生动效卡片库</h1><p className="description">{cards.length} 张标准动效卡。网页只用来看效果，时间线操作由 AI 在 ChatCut 中完成。</p></header><section className="grid">{cards.map(card => <article className="card" key={card.id} onClick={() => setSelected(card)}><Preview card={card}/><div className="card-copy"><div><h2>{card.name}</h2><p>{card.description}</p></div><span>{card.defaultDuration}s · v{card.version}</span></div></article>)}</section></main>;
 }

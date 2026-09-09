@@ -1,0 +1,78 @@
+{
+  "id": "proof-split-scene",
+  "name": "证据分屏场景",
+  "version": "1.0.0",
+  "description": "左真人、右文档证据、白色虚线大框、荧光绿能力标签。",
+  "defaultDuration": 5,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "top1",
+      "label": "顶部标签1",
+      "type": "text",
+      "defaultValue": "文章检查润色"
+    },
+    {
+      "key": "top2",
+      "label": "顶部标签2",
+      "type": "text",
+      "defaultValue": "专注中文写作校对"
+    },
+    {
+      "key": "side1",
+      "label": "侧标签1",
+      "type": "text",
+      "defaultValue": "错别字"
+    },
+    {
+      "key": "side2",
+      "label": "侧标签2",
+      "type": "text",
+      "defaultValue": "语病"
+    },
+    {
+      "key": "accentColor",
+      "label": "标签色",
+      "type": "color",
+      "defaultValue": "#8CFF18"
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    },
+    {
+      "key": "textColor",
+      "label": "文字颜色",
+      "type": "color",
+      "defaultValue": "#050505"
+    },
+    {
+      "key": "gridColor",
+      "label": "网格颜色",
+      "type": "color",
+      "defaultValue": "#686868"
+    }
+  ],
+  "mediaSlots": [
+    {
+      "key": "presenterVideo",
+      "label": "真人视频",
+      "type": "video",
+      "required": true
+    },
+    {
+      "key": "proofImage",
+      "label": "证据截图",
+      "type": "image",
+      "required": true
+    },
+    {
+      "key": "logoImage",
+      "label": "工具 Logo",
+      "type": "image",
+      "required": false
+    }
+  ]
+}

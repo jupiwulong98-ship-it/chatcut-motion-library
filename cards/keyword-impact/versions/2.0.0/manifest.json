@@ -1,0 +1,35 @@
+{
+  "id": "keyword-impact",
+  "name": "关键词冲击",
+  "version": "2.0.0",
+  "description": "超大黄色关键词横跨人物背后，字符快速拼入。",
+  "defaultDuration": 2.2,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "text",
+      "label": "关键词",
+      "type": "text",
+      "defaultValue": "AI信息差"
+    },
+    {
+      "key": "color",
+      "label": "文字颜色",
+      "type": "color",
+      "defaultValue": "#FFF58A"
+    },
+    {
+      "key": "fontSize",
+      "label": "字号",
+      "type": "number",
+      "defaultValue": 280
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    }
+  ],
+  "mediaSlots": []
+}

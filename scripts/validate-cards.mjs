@@ -3,17 +3,6 @@ import path from "node:path";
 
 const root = process.cwd();
 const cardsDir = path.join(root, "cards");
-const expected = [
-  "broll-takeover",
-  "keyword-impact",
-  "logo-wall",
-  "number-impact",
-  "result-compare",
-  "screen-focus-callout",
-  "tag-list",
-  "template-wall",
-];
-
 if (!fs.existsSync(cardsDir)) {
   console.error("cards directory is missing");
   process.exit(1);
@@ -25,9 +14,6 @@ const actual = fs.readdirSync(cardsDir, { withFileTypes: true })
   .sort();
 
 const errors = [];
-if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-  errors.push(`expected exactly 8 card ids, got: ${actual.join(", ") || "none"}`);
-}
 
 for (const id of actual) {
   const pointerFile = path.join(cardsDir, id, "current.json");
@@ -44,6 +30,7 @@ for (const id of actual) {
   }
   const manifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"));
   if (manifest.id !== id) errors.push(`${id}: manifest id mismatch`);
+  if (manifest.version !== pointer.version) errors.push(`${id}: manifest version does not match current.json`);
   for (const key of ["source"]) {
     if (!manifest[key] || !fs.existsSync(path.join(versionDir, manifest[key]))) {
       errors.push(`${id}: ${key} file is missing`);
@@ -53,8 +40,18 @@ for (const id of actual) {
   for (const property of manifest.properties ?? []) {
     if (keys.has(property.key)) errors.push(`${id}: duplicate property key: ${property.key}`);
     keys.add(property.key);
+    if (!["text", "number", "color", "select", "boolean", "font", "image", "video"].includes(property.type)) {
+      errors.push(`${id}: invalid property type: ${property.key}`);
+    }
+  }
+  for (const slot of manifest.mediaSlots ?? []) {
+    if (keys.has(slot.key)) errors.push(`${id}: duplicate media/property key: ${slot.key}`);
+    keys.add(slot.key);
+    if (!["image", "video"].includes(slot.type) || typeof slot.required !== "boolean") errors.push(`${id}: invalid media slot: ${slot.key}`);
   }
 }
+
+if (!actual.length) errors.push("no cards found");
 
 if (errors.length) {
   console.error(errors.join("\n"));

@@ -1,4 +1,4 @@
-export type CardPropertyType = "text" | "number" | "color" | "select" | "boolean" | "image" | "video";
+export type CardPropertyType = "text" | "number" | "color" | "select" | "boolean" | "font" | "image" | "video";
 
 export interface CardProperty {
   key: string;

@@ -1,0 +1,71 @@
+{
+  "id": "side-kicker",
+  "name": "侧边关键词列",
+  "version": "1.0.0",
+  "description": "首行黄色关键词 + 小洋红圆点，后续白色关键词逐行累加。",
+  "defaultDuration": 3.2,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "line1",
+      "label": "第一行",
+      "type": "text",
+      "defaultValue": "公众号推文"
+    },
+    {
+      "key": "line2",
+      "label": "第二行",
+      "type": "text",
+      "defaultValue": "论文"
+    },
+    {
+      "key": "line3",
+      "label": "第三行",
+      "type": "text",
+      "defaultValue": "公文"
+    },
+    {
+      "key": "accentColor",
+      "label": "首行颜色",
+      "type": "color",
+      "defaultValue": "#FFE779"
+    },
+    {
+      "key": "secondaryColor",
+      "label": "后续颜色",
+      "type": "color",
+      "defaultValue": "#FFFFFF"
+    },
+    {
+      "key": "dotColor",
+      "label": "圆点颜色",
+      "type": "color",
+      "defaultValue": "#FF2AB5"
+    },
+    {
+      "key": "showDot",
+      "label": "显示圆点",
+      "type": "boolean",
+      "defaultValue": true
+    },
+    {
+      "key": "x",
+      "label": "水平位置",
+      "type": "number",
+      "defaultValue": 232
+    },
+    {
+      "key": "y",
+      "label": "垂直位置",
+      "type": "number",
+      "defaultValue": 398
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    }
+  ],
+  "mediaSlots": []
+}

@@ -1,0 +1,71 @@
+{
+  "id": "process-map-scene",
+  "name": "AI 创作流程图",
+  "version": "1.0.0",
+  "description": "黑色透视网格上，五个深紫节点按“文字→图像/代码/视频→音频”逐步出现。",
+  "defaultDuration": 4,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "title",
+      "label": "标题",
+      "type": "text",
+      "defaultValue": "AI创作全流程"
+    },
+    {
+      "key": "text1",
+      "label": "上",
+      "type": "text",
+      "defaultValue": "文字"
+    },
+    {
+      "key": "text2",
+      "label": "左",
+      "type": "text",
+      "defaultValue": "图像"
+    },
+    {
+      "key": "text3",
+      "label": "中",
+      "type": "text",
+      "defaultValue": "代码"
+    },
+    {
+      "key": "text4",
+      "label": "右",
+      "type": "text",
+      "defaultValue": "视频"
+    },
+    {
+      "key": "text5",
+      "label": "下",
+      "type": "text",
+      "defaultValue": "音频"
+    },
+    {
+      "key": "fontFamily",
+      "label": "字体",
+      "type": "font",
+      "defaultValue": "Noto Sans SC"
+    },
+    {
+      "key": "nodeColor",
+      "label": "节点底色",
+      "type": "color",
+      "defaultValue": "#271862"
+    },
+    {
+      "key": "textColor",
+      "label": "节点文字色",
+      "type": "color",
+      "defaultValue": "#FFF48B"
+    },
+    {
+      "key": "gridColor",
+      "label": "网格颜色",
+      "type": "color",
+      "defaultValue": "#686868"
+    }
+  ],
+  "mediaSlots": []
+}

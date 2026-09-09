@@ -1,6 +1,30 @@
-import { useEffect,useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { Player, type PlayerRef } from "@remotion/player";
 import { previewComponents } from "../cards/previews";
+import { cardProps } from "../cards/bindings";
 import type { CardManifest } from "../cards/types";
-let activeFrame=0;let activeDuration=84;
-Object.assign(globalThis,{useCurrentFrame:()=>activeFrame,useVideoConfig:()=>({fps:30,durationInFrames:activeDuration,width:1920,height:1080}),spring:({frame,fps=30}:{frame:number;fps?:number})=>Math.max(0,Math.min(1,1-Math.exp(-Math.max(0,frame)/(fps*.16))*Math.cos(Math.max(0,frame)/3))),interpolate:(value:number,input:number[],output:number[],options?:{extrapolateLeft?:string;extrapolateRight?:string})=>{if(value<=input[0]&&options?.extrapolateLeft==="clamp")return output[0];if(value>=input.at(-1)!&&options?.extrapolateRight==="clamp")return output.at(-1)!;const ratio=(value-input[0])/(input.at(-1)!-input[0]);return output[0]+ratio*(output.at(-1)!-output[0]);}});
-export function MotionPreview({card,playing,onEnd}:{card:CardManifest;playing:boolean;onEnd:()=>void}){const[frame,setFrame]=useState(0);const duration=Math.round(card.defaultDuration*30);useEffect(()=>{if(!playing){setFrame(0);return;}const started=performance.now();let raf=0;const tick=(now:number)=>{const next=Math.floor((now-started)/1000*30);if(next>=duration){onEnd();return;}setFrame(next);raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);return()=>cancelAnimationFrame(raf);},[duration,onEnd,playing]);activeFrame=playing?frame:Math.min(30,duration-1);activeDuration=duration;const Card=previewComponents[card.id];const props=Object.fromEntries(card.properties.map(property=>[property.key,property.defaultValue]));return <svg className="motion-svg" viewBox="0 0 1920 1080" aria-label={`${card.name}动画预览`}><foreignObject width="1920" height="1080"><div className="motion-stage">{Card?<Card item={{props}}/>:null}</div></foreignObject></svg>}
+
+export function MotionPreview({ card, playing, onEnd }: { card: CardManifest; playing: boolean; onEnd: () => void }) {
+  const player = useRef<PlayerRef>(null);
+  const duration = Math.round(card.defaultDuration * 30);
+  const settledFrame = Math.min(duration - 1, Math.round(duration * 0.7));
+  const inputProps = useMemo(() => ({ item: { props: cardProps(card) } }), [card]);
+  useEffect(() => {
+    const instance = player.current;
+    if (!instance) return;
+    instance.addEventListener("ended", onEnd);
+    if (playing) { instance.seekTo(0); instance.play(); }
+    else { instance.pause(); instance.seekTo(settledFrame); }
+    return () => instance.removeEventListener("ended", onEnd);
+  }, [playing, settledFrame, onEnd]);
+  const Card = previewComponents[card.id];
+  if (!Card) return null;
+  return <>
+    <Player ref={player} component={Card} inputProps={inputProps}
+      durationInFrames={duration} fps={30} compositionWidth={1920} compositionHeight={1080}
+      initialFrame={settledFrame} initiallyMuted controls={false} clickToPlay={false}
+      doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false}
+      style={{ width: "100%", height: "100%" }} aria-label={`${card.name}动画预览`} />
+    {card.mediaSlots.length > 0 && <div className="media-binding-notice">需要在 ChatCut 绑定素材</div>}
+  </>;
+}

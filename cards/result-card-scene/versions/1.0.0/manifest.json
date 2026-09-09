@@ -1,0 +1,36 @@
+{
+  "id": "result-card-scene",
+  "name": "单结果重点展示",
+  "version": "1.0.0",
+  "description": "单张大结果占据画面中央，黑色网格露在两侧，左下圆形真人。",
+  "defaultDuration": 5.0,
+  "source": "Component.jsx",
+  "properties": [
+    {
+      "key": "gridColor",
+      "label": "网格颜色",
+      "type": "color",
+      "defaultValue": "#686868"
+    }
+  ],
+  "mediaSlots": [
+    {
+      "key": "resultImage",
+      "label": "结果图",
+      "type": "image",
+      "required": false
+    },
+    {
+      "key": "resultVideo",
+      "label": "结果视频",
+      "type": "video",
+      "required": false
+    },
+    {
+      "key": "presenterVideo",
+      "label": "真人视频",
+      "type": "video",
+      "required": true
+    }
+  ]
+}
